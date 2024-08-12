@@ -18,5 +18,5 @@ jobs:
               issue_number: context.issue.number,
               owner: context.repo.owner,
               repo: context.repo.repo,
-              body: '(Automated Bot Message) test test test https://example.com/?branch=${{ github.event.issue.number }}%2Ftest'
+              body: '(Automated Bot Message) test test test https://example.com/?branch=${{ github.event.pull_request.id }}%2Ftest'
             })
