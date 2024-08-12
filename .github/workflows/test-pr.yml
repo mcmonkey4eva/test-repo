@@ -1,0 +1,20 @@
+
+name: Pull Request Test
+on:
+    pull_request_target:
+        types: [labeled]
+
+jobs:
+  comment:
+    if: ${{ github.event.label.name == 'Test' }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/github-script@v6
+        with:
+          script: |
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: '(Automated Bot Message) test test test https://example.com/?branch=${{ context.issue.number }}%2Ftest'
+            })
