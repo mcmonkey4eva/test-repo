@@ -1,9 +1,7 @@
 
 name: Pull Request Test
 on:
-    pull_request:
-        types: [labeled]
-    issues:
+    pull_request_target:
         types: [labeled]
 
 jobs:
