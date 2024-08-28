@@ -3,6 +3,8 @@ on:
   schedule:
     # Run daily
     - cron: '30 */4 * * *'
+permissions:
+  issues: write
 
 jobs:
   stale:
